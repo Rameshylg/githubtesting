@@ -15,6 +15,8 @@ permissions:
 jobs:
   build:
 
+    runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
     - run: |
@@ -38,8 +40,7 @@ jobs:
       run: |
         pip install pytest
         export PYTHONPATH=src
-        pytest
-    - name: Deploy to Devserver
+        pytest    - name: Deploy to Devserver
       env:
         API_TOKEN: ${{ secrets.API_TOKEN }}
         
