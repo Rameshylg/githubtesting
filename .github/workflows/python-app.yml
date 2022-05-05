@@ -41,7 +41,7 @@ jobs:
         pytest
     - name: Deploy to Devserver
       env:
-        SSH_TOKEN: ${{ secrets.SSH_TOKEN }}
+        API_TOKEN: ${{ secrets.API_TOKEN }}
         
         if: github.ref == 'refs/heads/master' && job.status == 'success'
       run: |
