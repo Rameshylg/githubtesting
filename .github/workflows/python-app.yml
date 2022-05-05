@@ -45,6 +45,6 @@ jobs:
       env:
         API_TOKEN: ${{ secrets.API_TOKEN }}
         if: github.ref == 'refs/heads/master' && job.status == 'success'
-        run: | 
-            git remote set-url origin https://Rameshylg@boscogitlab.in/Rameshylg/githubtesting.git
-            git push -u origin master
+      run: | 
+       git remote set-url origin https://Rameshylg@boscogitlab.in/Rameshylg/githubtesting.git
+       git push -u origin master
