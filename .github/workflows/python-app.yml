@@ -42,7 +42,8 @@ jobs:
     - name: Deploy to Devserver
       env:
         SSH_TOKEN: ${{ secrets.SSH_TOKEN }}
+        
         if: github.ref == 'refs/heads/master' && job.status == 'success'
       run: |
-        git remote set-url origin https://kuttinnasi@boscogitlab.in/kuttinnasi/python-github-actions-example.git
-        git push origin master
+        git remote set-url origin https://kuttinnasi@boscogitlab.in/kuttinnasi/githubtesting.git
+        git push -u origin master
