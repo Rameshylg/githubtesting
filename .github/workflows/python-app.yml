@@ -40,7 +40,8 @@ jobs:
       run: |
         pip install pytest
         export PYTHONPATH=src
-        pytest    - name: Deploy to Devserver
+        pytest   
+    - name: Deploy to Devserver
       env:
         API_TOKEN: ${{ secrets.API_TOKEN }}
         if: github.ref == 'refs/heads/master' && job.status == 'success'
