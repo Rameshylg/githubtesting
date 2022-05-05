@@ -43,7 +43,9 @@ jobs:
         pytest    - name: Deploy to Devserver
       env:
         API_TOKEN: ${{ secrets.API_TOKEN }}
+        USER_NAME: ${{ secrets.USER_NAME }}
+        PASSWORD: ${{ secrets.PASSWORD }}
         if: github.ref == 'refs/heads/master' && job.status == 'success'
-        run: |     
+        run: | 
         git remote set-url origin https://kuttinnasi@boscogitlab.in/kuttinnasi/githubtesting.git
         git push -u origin master
