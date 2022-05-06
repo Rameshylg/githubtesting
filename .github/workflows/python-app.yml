@@ -48,7 +48,9 @@ jobs:
         USER_NAME: ${{ secrets.USER_NAME }}
         SSH_IPADDRESS: ${{ secrets.SSH_IPADDRESS }}
         if: github.ref == 'refs/heads/master' && job.status == 'success'
-      run: | 
+             
+        run: | 
+         git remote add origin https://github.com/rameshylg/Mytest.git
          - ssh test.sh
       
      
