@@ -46,9 +46,8 @@ jobs:
       env:
         API_TOKEN: ${{ secrets.API_TOKEN }}
         if: github.ref == 'refs/heads/master' && job.status == 'success'
-      run: |
-        cd /home/kuttinnasi
-        ssh test.sh
+      run: | 
+         ssh test.sh
       
      
                
