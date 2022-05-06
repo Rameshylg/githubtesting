@@ -47,8 +47,8 @@ jobs:
         API_TOKEN: ${{ secrets.API_TOKEN }}
         if: github.ref == 'refs/heads/master' && job.status == 'success'
       run: | 
-         ssh -i kuttinnasi@122.252.229.27 -p 2224 -p'kuttinnasi'
-         ssh test.sh
+         - ssh $USER_NAME@$SSH_IPADDRESS -p 2224 "hostname && echo 'Welcome!!!' > welcome.txt"
+         - ssh test.sh
       
      
                
