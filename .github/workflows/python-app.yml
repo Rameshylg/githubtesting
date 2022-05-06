@@ -43,5 +43,10 @@ jobs:
         pytest   
     - name: Deploy to Devserver
       env:
-        run: |
-          - ssh -i root@192.168.1.8:2224 -p'Se25ve9r'
+        API_TOKEN: ${{ secrets.API_TOKEN }}
+        if: github.ref == 'refs/heads/master' && job.status == 'success'
+      run: |
+        - ssh -i root@192.168.1.8:2224 -p'Se25ve9r'
+          git push -u origin master
+      
+          
