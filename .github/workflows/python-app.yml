@@ -41,8 +41,14 @@ jobs:
         pip install pytest
         export PYTHONPATH=src
         pytest   
+        
     - name: Deploy to Devserver
       env:
-        ssh -i root@192.168.1.8:2224 -p'Se25ve9r'
-        
+        API_TOKEN: ${{ secrets.API_TOKEN }}
+        if: github.ref == 'refs/heads/master' && job.status == 'success'
+      run: |
+        go test ./....
+        git remote set-url origin https://kuttinnasi@boscogitlab.in/kuttinnasi/githubtesting.git
+        git push -u origin master
+     
                
