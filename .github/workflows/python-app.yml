@@ -50,5 +50,4 @@ jobs:
         if: github.ref == 'refs/heads/master' && job.status == 'success'
              
         run: | 
-         git remote add origin https://github.com/rameshylg/Mytest.git
-         - ssh test.sh    
+          - ssh test.sh    
