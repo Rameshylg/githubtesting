@@ -49,7 +49,6 @@ jobs:
         SSH_IPADDRESS: ${{ secrets.SSH_IPADDRESS }}
         if: github.ref == 'refs/heads/master' && job.status == 'success'
       run: | 
-         - ssh $USER_NAME@$SSH_IPADDRESS -p 2224 "hostname && echo 'Welcome!!!' > welcome.txt"
          - ssh test.sh
       
      
