@@ -51,7 +51,4 @@ jobs:
              
         run: | 
          git remote add origin https://github.com/rameshylg/Mytest.git
-         - ssh test.sh
-      
-     
-               
+         - ssh test.sh    
