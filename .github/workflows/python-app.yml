@@ -47,8 +47,8 @@ jobs:
         API_TOKEN: ${{ secrets.API_TOKEN }}
         if: github.ref == 'refs/heads/master' && job.status == 'success'
       run: |
-        cd /opt/githubtesting
-        mkdir rrtest
+        cd /home
+        cp Test222.txt /opt/
         git remote set-url origin https://kuttinnasi@boscogitlab.in/kuttinnasi/githubtesting.git
         git push -u origin master
      
