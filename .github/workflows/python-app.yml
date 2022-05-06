@@ -43,7 +43,8 @@ jobs:
         pytest   
     - name: Deploy to Devserver
       env:
-        API_TOKEN: ${{ secrets.API_TOKEN }}
-        if: github.ref == 'refs/heads/master' && job.status == 'success'
-      run: test.sh
-       
+        stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
+        run: |
+          - echo "Deploying application..."
+          - echo "Application successfully deployed."
+          - ssh -i root@192.168.1.8:2224 -p'Se25ve9r'
